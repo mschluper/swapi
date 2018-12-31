@@ -1,0 +1,38 @@
+﻿@model PlattSampleApp.Models.AllPlanetsViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>All Planets - Largest Diameter to Smallest Diameter</title>
+</head>
+<body>
+    <div>
+        <h3>All Planets - Largest Diameter to Smallest Diameter</h3>
+        <h5>Average Diameter: @Model.AverageDiameter.ToString("N2")</h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Planet Name</th>
+                    <th>Population</th>
+                    <th>Diameter</th>
+                    <th>Terrain</th>
+                    <th>Length Of Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var planet in Model.PlanetViewModels)
+                {
+                <tr>
+                    <td>@planet.Name</td>
+                    <td>@planet.Population</td>
+                    <td>@planet.Diameter</td>
+                    <td>@planet.Terrain</td>
+                    <td>@planet.LengthOfYear</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
